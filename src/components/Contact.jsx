@@ -22,11 +22,20 @@ const socialLinks = [
     </svg>,
     alt: 'Instagram'
   },
+  {
+    href: 'https://wa.me/5561985091848?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M20.52 3.48C18.24 1.2 15.24 0 12 0C5.37 0 0 5.37 0 12C0 13.89 0.45 15.72 1.32 17.4L0 24L6.72 22.68C8.4 23.55 10.23 24 12.12 24C18.75 24 24.12 18.63 24.12 12C24.12 8.76 22.92 5.76 20.64 3.48H20.52ZM12.12 21.6C10.44 21.6 8.88 21.18 7.44 20.34L6.96 20.1L3.72 20.76L4.38 17.52L4.14 17.04C3.3 15.6 2.88 14.04 2.88 12.36C2.88 7.32 7.08 3.6 12.12 3.6C14.52 3.6 16.8 4.56 18.48 6.24C20.16 7.92 21.12 10.2 21.12 12.6C21.12 17.64 17.28 21.6 12.12 21.6ZM17.04 14.64C16.8 14.52 15.9 14.1 15.66 14.04C15.42 13.92 15.24 13.92 15 14.16C14.76 14.52 14.52 14.76 14.28 15C14.16 15.12 14.04 15.12 13.8 15.06C13.56 14.04 13.08 13.38 12.3 12.78C11.7 12.3 11.22 11.7 11.1 11.1C11.04 10.86 11.16 10.74 11.28 10.62C11.46 10.44 11.64 10.2 11.82 9.96C12.06 9.72 12.06 9.54 11.94 9.3C11.82 9.06 11.34 7.98 11.1 7.44C10.98 7.2 10.86 7.08 10.62 7.08C10.44 7.08 10.2 7.08 9.96 7.08C9.66 7.08 9.36 7.2 9.18 7.44C8.82 7.98 8.46 9.54 9.96 10.5C11.04 12.78 13.26 14.82 15.66 15.78C16.5 16.08 16.62 16.08 16.86 15.84C17.1 15.66 17.28 15.12 17.04 14.64Z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    alt: 'WhatsApp',
+  },
+
 ];
-
-
-
-
 
 
 const Contact = () => {
@@ -36,7 +45,7 @@ const Contact = () => {
     className="section"
     >
         <div className="container lg:grid lg:grid-cols-2
-        lg:items-stretch">
+        lg:items-stretch lg:pt-10">
             <div className="mb-12 lg:mb-0 lg:flex lg:flex-col">
                 <h2 className="headline-2 lg:max-w-[12ch]">
                     Meu contato para colaboração
@@ -44,18 +53,20 @@ const Contact = () => {
 
                 <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] 
                 lg:max-w-[30ch]">
-                    Entre em contato hoje mesmo para discutir as necessidades do seu projeto e comece a colaborar em algo incrível!
+                    Entre em contato pelas minhas redes sociais ou por e-mail!
                 </p>
 
                 <div className="flex items-center gap-2 mt-auto">
-                    {socialLinks.map(({ href, icon}, key) => (
+                    {socialLinks.map(({ href, icon, alt}, key) => (
                         <a 
                         key={key}
                         href={href}
                         target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={alt}
                         className="w-12 h-12 grid place-items-center ring-inset ring-2 
-                                ring-zinc-50/5 rounded-3xl transition-
-                                [background-color,color] hover:bg-zinc-300 hover:text-zinc-950 active:bg-zinc-50/80"
+                                ring-zinc-800 rounded-3xl transition-colors 
+                                hover:bg-zinc-300 hover:text-zinc-950 active:bg-zinc-50/80"
                         >
                             {icon}
                         </a>
@@ -71,12 +82,12 @@ const Contact = () => {
             className="xl:pl-10 2xl:pl-20"
             >
 
-                <div className="md:grid md:items-center md:grid-cols-2 md:gap-15">
+                <div className="md:grid md:items-center md:grid-cols-2 md:gap-16">
                     <div className="mb-4">
                         <label 
                         htmlFor="name" 
                         className="label">
-                            Name
+                            Nome
                         </label>
 
                         <input 
@@ -93,7 +104,7 @@ const Contact = () => {
                         <label 
                         htmlFor="email" 
                         className="label">
-                            Email
+                            E-mail
                         </label>
 
                         <input 
@@ -112,7 +123,7 @@ const Contact = () => {
                         htmlFor="message" 
                         className="label"
                     >
-                        Message
+                        Mensagem
                     </label>
 
                     <textarea 
@@ -127,7 +138,7 @@ const Contact = () => {
                 <button 
                 type="submit"
                 className='btn btn-primary [&]:max-w-full w-full justify-center'>
-                    Submit
+                    Enviar
                 </button>
 
             </form>

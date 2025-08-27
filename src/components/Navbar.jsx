@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 
 const Navbar = ({ navOpen }) => {
@@ -32,28 +32,33 @@ const Navbar = ({ navOpen }) => {
 
     const navItems = [
     {
-      label: 'Home',
+      label: 'Início',
       link: '#home',
       className: 'nav-link active',
       ref: lastActiveLink
     },
     {
-      label: 'About',
+      label: 'Sobre-mim',
       link: '#about',
       className: 'nav-link'
     },
     {
-      label: 'Work',
+      label: 'Hard Skills',
+      link: '#hardSkills',
+      className: 'nav-link'
+    },
+    {
+      label: 'Projetos',
       link: '#work',
       className: 'nav-link'
     },
     {
-      label: 'Reviews',
-      link: '#reviews',
+      label: 'Experiência',
+      link: '#experience',
       className: 'nav-link'
     },
     {
-      label: 'Contact',
+      label: 'Contato',
       link: '#contact',
       className: 'nav-link md:hidden'
     }
@@ -83,7 +88,7 @@ const Navbar = ({ navOpen }) => {
 }
 
 Navbar.propTypes = {
-    navOpen: propTypes.bool.isRequired
+    navOpen: PropTypes.bool.isRequired
 }
 
 export default Navbar

@@ -1,6 +1,4 @@
-import React from 'react'
 import ProjectCard from './projectCard';
-import Foto from '../assets/images/download.jpg'
 import Cafe from '../assets/images/cafeWallpaper.jpg'
 import cars from '../assets/images/carsApp.jpg';
 import Cotacao from '../assets/images/CotacoesApp.jpg';
@@ -58,7 +56,7 @@ const Work = () => {
       className='section'
       >
         <div className="container">
-          <h2 className="headline-2 mb-8">
+          <h2 className="headline-2 mb-8 lg:pt-5">
             Meus projetos
           </h2>
 
