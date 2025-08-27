@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      animation: {
+        'spin-slow': 'spin 6s linear infinite',
+      },
     },
   },
   plugins: [tailwindScrollbar],
