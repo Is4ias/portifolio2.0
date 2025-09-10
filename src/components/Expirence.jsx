@@ -1,20 +1,52 @@
 import React from "react"
 import { Briefcase, MapPin, Calendar, Linkedin } from "lucide-react"
+import { FaFigma, FaFileExcel } from "react-icons/fa";  // Figma e Excel
+import { SiPostgresql } from "react-icons/si";
+import SkillCard from "./SkillCard";
 
 export default function ExperienciaProfissional() {
-  return (
-    <section id="experience" className=" bg-[#0f0f11] min-h-screen text-white py-16 px-6 lg:pt-40 mb-30 ">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-3xl font-bold mb-2">
-          EXPERIENCIA PROFISSIONAL
-        </h2>
-        <p className="text-center text-gray-400 mb-10 font-extralight">
-          Minha jornada profissional e as experiencias que moldaram minha carreira
-        </p>
 
-        <div className="bg-zinc-800/50 rounded-2xl shadow-lg overflow-hidden">
+  const skills = [
+    {
+      imgSrc: <FaFigma className="text-red-400 text-5xl animate-pulse" />,
+      label: "Figma",
+      desc: "Ferramenta de design UI/UX"
+    },
+    {
+      imgSrc: <FaFileExcel className="text-green-600 text-5xl animate-pulse" />,
+      label: "Excel",
+      desc: "Planilhas e análise de dados"
+    },
+    {
+      imgSrc: <SiPostgresql className="text-blue-500 text-5xl animate-pulse" />,
+      label: "PostgreSQL",
+      desc: "Banco de dados relacional"
+    },
+    {
+      imgSrc: <FaFigma className="text-red-400 text-5xl animate-pulse" />,
+      label: "Figma",
+      desc: "Ferramenta de design UI/UX"
+    },
+  ]
+
+
+  return (
+    <section 
+      id="experience" 
+      className="container with-header bg-zinc-900 w-full min-h-screen text-white">
+      <div className="max-w-6xl mx-auto md:pt-20">
+          <h2 className="headline-2 text-2xl md:text-3xl font-bold mb-2">
+            Experiência Profissional
+          </h2>
+          <p className="text-zinc-400 mb-10 font-extralight">
+            Minha jornada profissional e as experiências que moldaram minha carreira
+          </p>
+        
+        
+
+        <div className="bg-zinc-800/40 rounded-2xl shadow-lg overflow-hidden">
           <div className="bg-gradient-to-r from-sky-600 p-6">
-            <h3 className="text-xl font-bold">MINISTÉRIO DO MEIO AMBIENTE E MUDANÇA DO CLIMA</h3>
+            <h3 className="text-xl font-extralight max-w-[22ch] md:max-w-[35ch]">MINISTÉRIO DO MEIO AMBIENTE E MUDANÇA DO CLIMA</h3>
             <p className="text-sm">Estágio em Desenvolvimento de Sistemas</p>
             <div className="flex gap-4 text-sm text-gray-300 mt-2">
               <div className="flex items-center gap-1">
@@ -62,28 +94,19 @@ export default function ExperienciaProfissional() {
                 TECNOLOGIAS UTILIZADAS
               </h4>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-[#26262b] p-4 rounded-xl text-center">
-                  <span className="block text-gray-300 font-bold">Power BI</span>
-                    <p className="text-sm text-gray-400">Insights</p>
-                </div>
-                <div className="bg-[#26262b] p-4 rounded-xl text-center">
-                  <span className="block text-gray-300 font-bold">PostegreSQL</span>
-                    <p className="text-sm text-gray-400">Banco de Dados</p>
-                  
-                </div>
+              <div className="grid gap-3">
+                {skills.map(({ imgSrc, label, desc}, index) => (
+                  <SkillCard
+                    key={index}
+                    imgSrc={imgSrc}
+                    label={label}
+                    desc={desc}
+                    classes="reveal-up"
+                  />
+                ))}
 
-                <div className="bg-[#26262b] p-4 rounded-xl text-center">
-                  <span className="block text-gray-300 font-bold">Figma</span>
-                    <p className="text-sm text-gray-400">Design & Prototipagem</p>
-                </div>
-
-                <div className="bg-[#26262b] p-4 rounded-xl text-center">
-                  <span className="block text-gray-300 font-bold">Excel</span>
-                    <p className="text-sm text-gray-400">Análise de Dados</p>
-                </div>
               </div>
-
+              
               <div className="mt-6">
                 <a 
                   target="_blank"

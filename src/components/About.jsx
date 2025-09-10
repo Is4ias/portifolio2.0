@@ -16,8 +16,9 @@ const About = () => {
     id="about"
     className='section'
     >
-        <div className='container lg:pt-20'>
-            <div className='bg-zinc-800/50 p-7 rounded-2xl md:p-12'>
+        <div className='container with-header mx-auto lg:pt-20'>
+            <h2 className="headline-2">Sobre mim</h2>
+            <div className='bg-zinc-800/50 p-7 rounded-2xl md:p-12 mt-14 reveal-up'>
                 <p className="text-zinc-300 mb-4 leading-relaxed text-sm md:text-base">
                     Sou um jovem profissional graduado em Análise de Desenvolvimento de Sistemas pela 
                     Universidade Estácio. Desde o início da minha jornada acadêmica, 

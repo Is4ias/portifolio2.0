@@ -1,10 +1,9 @@
-import React from 'react'
 import SkillCard from './SkillCard';
 
 import { 
-  FaPython, FaJs, FaReact, FaGithub, FaFigma, FaGitAlt
+  FaPython, FaJs, FaReact, FaGithub, FaFigma, FaGitAlt, FaFileExcel, 
 } from "react-icons/fa";
-import { SiDjango, SiTailwindcss, SiMysql, SiSqlite, SiCss3} from "react-icons/si";
+import { SiDjango, SiTailwindcss, SiMysql, SiSqlite, SiCss3, SiPostgresql} from "react-icons/si";
 
 
 const skillItem = [
@@ -46,7 +45,7 @@ const skillItem = [
   {
     imgSrc: <SiMysql className="text-blue-400 text-5xl animate-pulse" />,
     label: "MySQL",
-    desc: "Banco de dados"
+    desc: "Banco de relacional"
   },
   {
     imgSrc: <SiSqlite className="text-gray-400 text-5xl animate-pulse" />,
@@ -54,9 +53,14 @@ const skillItem = [
     desc: "Banco de dados"
   },
   {
-    imgSrc: <FaFigma className="text-pink-500 text-5xl animate-pulse" />,
+    imgSrc: <SiPostgresql className="text-blue-500 text-5xl" />,
+    label: "PostgreSQL",
+    desc: "Banco de dados relacional"
+  },
+  {
+    imgSrc: <FaFigma className="text-red-400 text-5xl animate-pulse" />,
     label: "Figma",
-    desc: "Ferramenta de design"
+    desc: "Ferramenta de design UI/UX"
   },
   {
     imgSrc: <FaGithub className="text-white text-5xl animate-pulse" />,
@@ -68,14 +72,20 @@ const skillItem = [
     label: "Git",
     desc: "Versionamento"
   },
+  {
+    imgSrc: <FaFileExcel className="text-green-600 text-5xl" />,
+    label: "Excel",
+    desc: "Planilhas e análise de dados"
+  },
+  
 ];
 
 const Skills = () => {
   return (
     <section id="hardSkills" className="section">
-      <div className="container lg:pt-10">
-        <h2 className="headline-2">Linguagens & Ferramentas</h2>
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
+      <div className="container with-header lg:pt-10 md:pt-8">
+        <h2 className="headline-2 reveal-up">Linguagens & Ferramentas</h2>
+        <p className="text-zinc-400 mb-8 max-w-[50ch]">
           Descubra as ferramentas e tecnologias poderosas que uso para criar sites e aplicativos e sistemas.
         </p>
 
@@ -86,6 +96,7 @@ const Skills = () => {
               imgSrc={imgSrc}
               label={label}
               desc={desc}
+              classes="reveal-up"
             />
           ))}
         </div>

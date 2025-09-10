@@ -56,7 +56,7 @@ const Work = () => {
       className='section'
       >
         <div className="container">
-          <h2 className="headline-2 mb-8 lg:pt-5">
+          <h2 className="headline-2 with-header mb-8 lg:pt-5 md:pt-8 reveal-up">
             Meus projetos
           </h2>
 
@@ -70,6 +70,7 @@ const Work = () => {
                 title={title}
                 tags={tags}
                 projectLink={projectLink}
+                classes="reveal-up"
 
               />
             ))}
